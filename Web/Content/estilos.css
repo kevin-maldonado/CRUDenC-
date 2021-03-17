@@ -1,0 +1,482 @@
+﻿
+body {
+    font-size: .875rem;
+    /*overflow:hidden;*/
+}
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 48px 0 0; /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 1rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+    .sidebar .nav-link .feather {
+        margin-right: 4px;
+        color: #999;
+    }
+
+    .sidebar .nav-link.active {
+        color: #007bff;
+    }
+
+        .sidebar .nav-link:hover .feather,
+        .sidebar .nav-link.active .feather {
+            color: inherit;
+        }
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+/*
+ * Content
+ */
+
+[role="main"] {
+    padding-top: 65px; /* Space for fixed navbar */
+    padding-bottom: 65px;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.invalid-feedback {
+    font-size: 90%;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+    .form-control-dark:focus {
+        border-color: transparent;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+    }
+
+
+.footer {
+    display: block;
+    background: #024959;
+    color: #fff;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+}
+
+
+.titulo {
+    font-size: 180%;
+    margin-top: 15px;
+    padding: 10px 15px;
+    letter-spacing: -1px;
+    background-color: #123E51;
+    color: #fff;
+}
+
+.navbar {
+    background-color: #303030;
+    color: #FFF;
+}
+
+    .navbar a {
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    .navbar .navbar-brand {
+        background-color: #303030;
+        box-shadow: none;
+    }
+
+#principal {
+    border: 1px solid #afafaf;
+    box-shadow: 0 0 20px #afafaf;
+    height: 100%;
+}
+
+.modal-header {
+    background-color: #303030;
+    color: #FFF;
+}
+
+/*.table {
+    font-size: 12px;
+}*/
+
+.tblVerCaso {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+    .tblVerCaso td, .tablita th {
+        padding: .2rem;
+        vertical-align: middle;
+    }
+
+    .tblVerCaso thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .tblVerCaso tbody + tbody {
+        border-top: 2px solid #dee2e6;
+    }
+
+    .tblVerCaso .table {
+        background-color: #fff;
+    }
+
+
+.navi {
+    /*Bordes redondeados*/
+    -webkit-border-radius: 10px; /*Para chrome y Safari*/
+    -moz-border-radius: 10px; /*Para Firefox*/
+    -o-border-radius: 10px; /*Para Opera*/
+    border-radius: 10px; /*El estandar por defecto*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#CCC)); /*Para chrome y Safari*/
+    /*Degradados*/
+    background-image: -moz-linear-gradient(top center, #FFF, #CCC); /*Para Firefox*/
+    background-image: -o-linear-gradient(top, #FFF, #CCC); /*Para Opera*/
+    background-image: linear-gradient(top, #FFF, #CCC); /*El estandar por defecto*/
+    overflow: hidden;
+    padding: 1px;
+    width: auto;
+}
+
+    .navi ul {
+        list-style: none;
+        margin: 2px 10px 0 10px;
+        padding: 0;
+        height: 30px;
+    }
+
+        .navi ul li {
+            /*Bordes redondeados*/
+            -webkit-border-radius: 5px; /*Chrome y Safari*/
+            -moz-border-radius: 5px; /*Firefox*/
+            -o-border-radius: 5px; /*Opera*/
+            border-radius: 5px; /*Estandar por defecto*/
+            float: left;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 10px;
+            text-align: center;
+            /*Sombras para texto, los mismos parametros que box-shadow*/
+            text-shadow: 0px 1px 0px #FFF;
+        }
+
+            .navi ul li:hover {
+                /*Degradado de fondo*/
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to( #E3E3E3)); /*Chrome y Safari*/
+                background-image: -moz-linear-gradient(top center, #FFF, #E3E3E3); /*Firefox*/
+                background-image: -o-linear-gradient(top, #FFF, #E3E3E3); /*Opera*/
+                background-image: linear-gradient(top, #FFF, #E3E3E3); /*Estandar por defecto*/
+            }
+
+            .navi ul li a {
+                color: #013040;
+                /*display:block;*/
+                padding: 3px;
+                text-decoration: none;
+                font-size: 0.7em;
+                /*Transiciones*/
+                -webkit-transition: 0.4s linear all;
+                -moz-transition: 0.4s linear all;
+                -o-transition: 0.4s linear all;
+                transition: 0.4s linear all;
+            }
+
+                .navi ul li a:hover {
+                    color: #000;
+                }
+
+element.style {
+    height: auto;
+    line-height: 24px;
+}
+
+ul#css3menu1 li.toplast > a {
+    border-radius: 0 5px 5px 0;
+}
+
+ul#css3menu1 li.topfirst > a {
+    border-radius: 5px 0 0 5px;
+}
+
+
+#header-wrap {
+    /*background-color: rgba(0, 0, 0, 0.6);--color oscuro*/
+    background-color: rgb(255, 255, 255);
+    /*border-style: none;*/
+    /*height: 63px;*no/
+    /*left: 70%;no*/
+    margin-left: auto;
+    /*position:fixed;*/
+    position: relative;
+    top: 0px;
+    width: 100%; /* --Tamano derecho*/
+    z-index: 843;
+    left: 0px;
+}
+
+/*------------archivos-------------*/
+#upload {
+    width: 100%;
+    color: #92AAB0;
+    padding: 80px 50px;
+    opacity: 0;
+    border: 1px solid red;
+    z-index: 200;
+}
+
+.miArchivo {
+    border: 2px dotted #0B85A1;
+    width: 100%;
+    margin: 0 auto;
+}
+
+    .miArchivo span {
+        top: 100px;
+        color: red;
+        float: left;
+        font-size: 20px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+
+#tablaArvhivos span {
+    text-align: center;
+    width: 40px;
+    font-size: 10px;
+    float: left;
+}
+
+
+.mytooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted yellow;
+    color: white;
+}
+
+    .mytooltip .tooltiptext {
+        visibility: hidden;
+        width: 300px;
+        background-color: #495476;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 100;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -150px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+        .mytooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+    .mytooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.borde_buzon {
+    margin-top: 5px;
+    overflow: auto;
+    border: 1px solid #05607d;
+}
+
+.miEstilo {
+    border-collapse: collapse;
+    font-size: 12px;
+    border-spacing: 0px 0px;
+}
+
+    .miEstilo td, .miEstilo th {
+        border: 1px solid #000;
+    }
+
+    .miEstilo thead th, .miEstilo th {
+        text-align: center;
+        border-bottom: 1px solid #5593c3;
+    }
+
+    .miEstilo tr:nth-child(odd) {
+        background-color: #FFF;
+    }
+
+    .miEstilo tr:nth-child(even) {
+        background-color: #EBF6FF;
+    }
+
+    .miEstilo td span {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+        .miEstilo td span:hover {
+            font-weight: bold;
+        }
+
+
+#myModalVerArchivos .modal-dialog .modal-content {
+    margin: 0 auto;
+    height: 550px;
+}
+
+    #myModalVerArchivos .modal-dialog .modal-content .modal-body {
+        overflow: auto;
+    }
+
+
+.alerta_green, .alerta_yellow, .alerta_red {
+    text-align: center;
+}
+
+.alerta_red {
+    background-color: #FF0000;
+    color: #FFF;
+}
+
+.alerta_orange {
+    background-color: #FF5733;
+}
+
+.alerta_yellow {
+    background-color: #FFFF00;
+}
+
+.alerta_green {
+    background-color: #28B463;
+}
+
+
+span[rel~=verSolicitud], span[rel~=verFlujoSolicitud], .masInfo {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+    span[rel~=verSolicitud]:hover, span[rel~=verFlujoSolicitud]:hover, .masInfo:hover {
+        font-weight: bold;
+    }
+
+
+.modal-lg {
+    max-width: 90%;
+}
+
+
+    .modal-lg .modal-content {
+        margin: 0 auto;
+        height: calc(100vh - 60px);
+    }
+
+        .modal-lg .modal-content .modal-body {
+            overflow: auto;
+        }
+
+
+.fecha {
+    cursor: pointer;
+}
+
+.subtitulo {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 5px 0px;
+    padding: 5px 10px;
+    letter-spacing: -1px;
+    background-color: #123E51;
+    color: #fff;
+}
+
+a {
+    color: #002a43;
+}
+
+.mensajeDestacado {
+    font-size: 10px;
+    display: inline;
+    float: right;
+    position: relative;
+    border: 2px dotted yellow;
+    padding: 0 2px;
+    width: 20%;
+}
+
+.ver_btn {
+    display: inline;
+}
+
+.ocultar_btn {
+    display: none;
+}

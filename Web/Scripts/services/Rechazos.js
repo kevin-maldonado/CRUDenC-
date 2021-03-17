@@ -1,0 +1,3 @@
+﻿function Rechaza() {
+    $('#myModal').modal();
+}

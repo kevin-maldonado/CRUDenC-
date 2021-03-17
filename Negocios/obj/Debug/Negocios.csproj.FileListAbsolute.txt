@@ -1,0 +1,10 @@
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\bin\Debug\Negocios.dll.config
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\bin\Debug\Negocios.dll
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\bin\Debug\Negocios.pdb
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\bin\Debug\Entidad.dll
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\bin\Debug\Entidad.pdb
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\obj\Debug\Negocios.csprojAssemblyReference.cache
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\obj\Debug\Negocios.csproj.CopyComplete
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\obj\Debug\Negocios.dll
+C:\Users\desarrollo\Desktop\CrudProyecto\Negocios\obj\Debug\Negocios.pdb
