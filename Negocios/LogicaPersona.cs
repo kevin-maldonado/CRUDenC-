@@ -42,7 +42,6 @@ namespace Negocios
         {
             try
             {
-                //var datosPer = dc.Personas.Where(p => p.Id == info.Id).Select(p => p).FirstOrDefault();
                 Personas datosPer = new Personas();
                 datosPer.Codigo = info.Codigo;
                 datosPer.Nombres = info.Nombres;
@@ -52,7 +51,6 @@ namespace Negocios
                 datosPer.Email = info.Email;
                 datosPer.FechaNacimiento = info.FechaNacimiento;
                 datosPer.Genero = info.Genero;
-                datosPer.Precio = info.Precio;
                 datosPer.Estado = true;
                 datosPer.FechaRegistro = DateTime.Now;
                 dc.Personas.InsertOnSubmit(datosPer);
@@ -69,7 +67,6 @@ namespace Negocios
             Personas datosPer = dc.Personas.Single(p => p.Codigo == info.Codigo);
             dc.Personas.DeleteOnSubmit(datosPer);
             dc.SubmitChanges();
-
         }
         //Actualizar Datos
         public void ActualizarDatos(InfoPersona info)
@@ -83,7 +80,6 @@ namespace Negocios
             datosPer.Email = info.Email;
             datosPer.FechaNacimiento = info.FechaNacimiento;
             datosPer.Genero = info.Genero;
-            datosPer.Precio = info.Precio;
             datosPer.Estado = true;
             datosPer.FechaRegistro = DateTime.Now;
             dc.SubmitChanges();

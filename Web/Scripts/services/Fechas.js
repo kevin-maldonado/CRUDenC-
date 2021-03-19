@@ -45,45 +45,4 @@
             "firstDay": 1
         }
     });
-
-
-    $(".fechaSinMinDate").attr("readonly", "readonly");
-    $('.fechaSinMinDate').daterangepicker({
-        drops: "down",
-        maxDate: maxLimitDate,
-        singleDatePicker: true,
-        "locale": {
-            "format": "MM-DD-YYYY",
-            "separator": " - ",
-            "applyLabel": "Guardar",
-            "cancelLabel": "Cancelar",
-            "fromLabel": "Desde",
-            "toLabel": "Hasta",
-            "customRangeLabel": "Personalizar",
-            "daysOfWeek": [
-                "Do",
-                "Lu",
-                "Ma",
-                "Mi",
-                "Ju",
-                "Vi",
-                "Sa"
-            ],
-            "monthNames": [
-                "Enero",
-                "Febrero",
-                "Marzo",
-                "Abril",
-                "Mayo",
-                "Junio",
-                "Julio",
-                "Agosto",
-                "Septiembre",
-                "Octubre",
-                "Noviembre",
-                "Diciembre"
-            ],
-            "firstDay": 1
-        }
-    });
 });

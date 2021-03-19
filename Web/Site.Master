@@ -22,7 +22,6 @@
     <script src="../Scripts/lib/jquery-3.3.1.min.js"></script>
     <script src="../Scripts/lib/bootstrap.min.js"></script>
     <script src="../Scripts/lib/all.min.js"></script>
-    <script src="../Scripts/lib/bootbox.all.min.js"></script>
 
 
 
@@ -80,9 +79,6 @@
           </footer>
           <!-- End of Footer -->
         </div>
-
     </form>
-    <script src="../Scripts/services/generalGMD.js"></script>
-
 </body>
 </html>

@@ -17,9 +17,7 @@ namespace Entidad
         public string Email { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public char Genero { get; set; }
-        public decimal Precio { get; set; }
         public bool Estado { get; set;}
         public DateTime FechaRegistro { get; set; }
-        public string mensaje { get; set;}
     }
 }

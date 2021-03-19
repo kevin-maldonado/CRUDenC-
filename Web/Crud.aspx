@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Crud.aspx.cs" Inherits="Web.Crud" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script src="Scripts/lib/daterangepicker.js"></script>
+    <link href="Content/lib/daterangepicker.css" rel="stylesheet" />
+    <script src="Scripts/lib/moment.min.js"></script>
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
@@ -59,7 +62,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <asp:Label ID="LblFechaNacimiento" runat="server" class="col-sm-2 col-form-label" Text="Fecha de Nacimiento:"></asp:Label>
-                                <asp:TextBox ID="TxtFechaNacimiento" runat="server" class="form-control" placeholder="Fecha de Nacimiento" ToolTip="Ingresarsu fecha de nacimiento" ></asp:TextBox>
+                                <asp:TextBox ID="TxtFechaNacimiento" runat="server" CssClass="form-control fecha"  placeholder="Fecha de Nacimiento" ToolTip="Ingresarsu fecha de nacimiento" ></asp:TextBox>
                             </div>
                             
                         </div>
@@ -145,14 +148,5 @@
 
 
     </div>
-
-    <!-- End of Topbar -->
-
-
-    <!-- /.container-fluid -->
-
-    <!-- End of Main Content -->
-
-
-
+    <script src="Scripts/services/Fechas.js"></script>
 </asp:Content>

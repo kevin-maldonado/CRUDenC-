@@ -9,3 +9,4 @@ C:\Users\desarrollo\Desktop\ProyectoCRUD\Entidad\bin\Debug\Entidad.pdb
 C:\Users\desarrollo\Desktop\ProyectoCRUD\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
 C:\Users\desarrollo\Desktop\ProyectoCRUD\Entidad\obj\Debug\Entidad.dll
 C:\Users\desarrollo\Desktop\ProyectoCRUD\Entidad\obj\Debug\Entidad.pdb
+C:\Users\desarrollo\Desktop\ProyectoCRUD\Entidad\obj\Debug\Entidad.csprojAssemblyReference.cache
