@@ -68,7 +68,7 @@
                         <div class="col-lg-6">
                             <h6 class="m-0 font-weight-bold text-primary">seleccionar la accion por favor :</h6>
                             <asp:Button ID="BtnGuardar" runat="server" CssClass=" btn btn-success" OnClick="BtnGuardar_Click" Text="Guardar" />
-                            <asp:Button ID="BtnBuscar" runat="server" CssClass=" btn btn-secondary" OnClick="BtnBuscar_Click" Text="Buscar" />
+<%--                            <asp:Button ID="BtnBuscar" runat="server" CssClass=" btn btn-secondary" OnClick="BtnBuscar_Click" Text="Buscar" />--%>
                             <asp:Button ID="BtnActualizar" runat="server" CssClass="btn btn-info" OnClick="BtnActualizar_Click" Text="Actualizar" />
                             <asp:Button ID="BtnBorrar" runat="server" CssClass=" btn btn-danger" OnClick="BtnBorrar_Click" Text="Borrar" />
                         </div>
@@ -82,24 +82,7 @@
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                   <%-- <div class="dataTables_length" id="example_length">
-                                        <label>
-                                            Mostrar
-                                            <select name="example_length" aria-controls="example" class="custom-select custom-select-sm form-control form-control-sm">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select>
-                                            registros</label>
-                                    </div>--%>
-                                </div>
-                                <div class="auto-style1">
-                                    <%-- <%--filtracion de datos--%>
-                                    
-
-                                </div>
+         
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
                                         <table id="example1" class="table table-striped table-bordered" style="width: 100%">
