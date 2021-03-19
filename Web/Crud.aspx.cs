@@ -107,39 +107,33 @@ namespace Web
         }
         protected void BtnActualizar_Click(object sender, EventArgs e)
         {
-            if (key != 0)
-            {
-                Personas infrPer = new Personas();
-                infrPer.Id = key;
-                infPer.Codigo = Convert.ToInt32(TxtCodigo.Text);
-                infPer.Nombres = TxtNombres.Text;
-                infPer.Apellidos = TxtApellidos.Text;
-                infPer.Edad = Convert.ToInt32(TxtEdad.Text);
-                infPer.Telefono = TxtTelefono.Text;
-                infPer.Email = TxtEmail.Text;
-                infPer.FechaNacimiento = DateTime.Parse(TxtFechaNacimiento.Text);
-                infPer.Genero = Char.Parse(TxtGenero.Text);
-                lgPer.ActualizarDatos(infPer);
-                lblMensaje.Text = "Cliente Actualizado Correctamente";
-            }
-            else
-            {
-                lblMensaje.Text = "No Se Pudo Actualizar los Datos";
-            }
+            Personas infrPer = new Personas();
+            infPer.Codigo = Convert.ToInt32(TxtCodigo.Text);
+            infPer.Nombres = TxtNombres.Text;
+            infPer.Apellidos = TxtApellidos.Text;
+            infPer.Edad = Convert.ToInt32(TxtEdad.Text);
+            infPer.Telefono = TxtTelefono.Text;
+            infPer.Email = TxtEmail.Text;
+            infPer.FechaNacimiento = DateTime.Parse(TxtFechaNacimiento.Text);
+            infPer.Genero = Char.Parse(TxtGenero.Text);
+            lgPer.ActualizarDatos(infPer);
+            lblMensaje.Text = "Cliente Actualizado Correctamente";
         }
 
         protected void BtnBorrar_Click(object sender, EventArgs e)
         {
-            if (key != 0)
-            {
-                lgPer.EliminarDatos(key);
-                lblMensaje.Text = "Cliente Elminado Correctamente";
-                limpiar();
-            }
-            else
-            {
-                lblMensaje.Text = "No Se Pudo Eliminar Datos";
-            }
+            Personas infrPer = new Personas();
+            infPer.Codigo = Convert.ToInt32(TxtCodigo.Text);
+            infPer.Nombres = TxtNombres.Text;
+            infPer.Apellidos = TxtApellidos.Text;
+            infPer.Edad = Convert.ToInt32(TxtEdad.Text);
+            infPer.Telefono = TxtTelefono.Text;
+            infPer.Email = TxtEmail.Text;
+            infPer.FechaNacimiento = DateTime.Parse(TxtFechaNacimiento.Text);
+            infPer.Genero = Char.Parse(TxtGenero.Text);
+            lgPer.EliminarDatos(infPer);
+            lblMensaje.Text = "Cliente Elminado Correctamente";
+            limpiar();
         }
         protected void WdgPersonas_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
         {

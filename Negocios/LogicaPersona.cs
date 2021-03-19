@@ -64,42 +64,29 @@ namespace Negocios
             }
         }
         //eliminar datos 
-        public void EliminarDatos(int key)
+        public void EliminarDatos(InfoPersona info)
         {
-            try
-            {
-                Personas datosPer = dc.Personas.Single(p => p.Id == key) ;
-                dc.Personas.DeleteOnSubmit(datosPer);
-                dc.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            Personas datosPer = dc.Personas.Single(p => p.Codigo == info.Codigo);
+            dc.Personas.DeleteOnSubmit(datosPer);
+            dc.SubmitChanges();
+
         }
         //Actualizar Datos
         public void ActualizarDatos(InfoPersona info)
         {
-            try
-            {
-                Personas datosPer = dc.Personas.Single(p => p.Id == info.Id);
-                datosPer.Codigo = info.Codigo;
-                datosPer.Nombres = info.Nombres;
-                datosPer.Apellidos = info.Apellidos;
-                datosPer.Edad = info.Edad;
-                datosPer.Telefono = info.Telefono;
-                datosPer.Email = info.Email;
-                datosPer.FechaNacimiento = info.FechaNacimiento;
-                datosPer.Genero = info.Genero;
-                datosPer.Precio = info.Precio;
-                datosPer.Estado = true;
-                datosPer.FechaRegistro = DateTime.Now;
-                dc.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            Personas datosPer = dc.Personas.Single(p => p.Codigo == info.Codigo);
+            datosPer.Codigo = info.Codigo;
+            datosPer.Nombres = info.Nombres;
+            datosPer.Apellidos = info.Apellidos;
+            datosPer.Edad = info.Edad;
+            datosPer.Telefono = info.Telefono;
+            datosPer.Email = info.Email;
+            datosPer.FechaNacimiento = info.FechaNacimiento;
+            datosPer.Genero = info.Genero;
+            datosPer.Precio = info.Precio;
+            datosPer.Estado = true;
+            datosPer.FechaRegistro = DateTime.Now;
+            dc.SubmitChanges();
         }
     }
 }
