@@ -12,36 +12,94 @@ namespace Negocios
     {
         db_personasDataContext dc = new db_personasDataContext();
 
-        public string[] GuardarDatos(Persona perso)
+        public List<Personas> Listar()
         {
-            string[] retorna = new string[2];
             try
             {
-                var datosPerso = dc.Personas.Where(p => p.Id == perso.Id).Select(f => f).FirstOrDefault();
-                datosPerso.Codigo = perso.Codigo;
-                datosPerso.Nombres = perso.Nombres;
-                datosPerso.Apellidos = perso.Apellidos;
-                datosPerso.Edad = perso.Edad;
-                datosPerso.Telefono = perso.Telefono;
-                datosPerso.Email = perso.Email;
-                datosPerso.FechaNacimineto = perso.FechaNacimineto;
-                datosPerso.Genero = perso.Genero;
-                datosPerso.Precio = perso.Precio;
-                datosPerso.Estado = perso.Estado;
-                datosPerso.FechaRegistro = perso.FechaRegistro;
-                
-                dc.SubmitChanges();
-                retorna[0] = "1";
-                retorna[1] = "";
+                List<Personas> list = dc.Personas.ToList();
+                return list;
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
-                retorna[0] = "0";
-                retorna[1] = "Error:" + ex.Message;
-                //oLog.Add("LOG - Edicion de Campos - Consolidacion - InfoConsolidacion.aspx - Error:" + ex.Message);
+                throw ex;
             }
-            return retorna;
+        }
+        //obtener Personas
+        public Personas ObtenerPersonas(int key)
+        {
+            try
+            {
+                Personas datosPer = dc.Personas.Single(p => p.Id == key);
+                return datosPer;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //Guardar Datos
+        public void GuardarDatos(InfoPersona info)
+        {
+            try
+            {
+                //var datosPer = dc.Personas.Where(p => p.Id == info.Id).Select(p => p).FirstOrDefault();
+                Personas datosPer = new Personas();
+                datosPer.Codigo = info.Codigo;
+                datosPer.Nombres = info.Nombres;
+                datosPer.Apellidos = info.Apellidos;
+                datosPer.Edad = info.Edad;
+                datosPer.Telefono = info.Telefono;
+                datosPer.Email = info.Email;
+                datosPer.FechaNacimiento = info.FechaNacimiento;
+                datosPer.Genero = info.Genero;
+                datosPer.Precio = info.Precio;
+                datosPer.Estado = true;
+                datosPer.FechaRegistro = DateTime.Now;
+                dc.Personas.InsertOnSubmit(datosPer);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //eliminar datos 
+        public void EliminarDatos(int key)
+        {
+            try
+            {
+                Personas datosPer = dc.Personas.Single(p => p.Id == key) ;
+                dc.Personas.DeleteOnSubmit(datosPer);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //Actualizar Datos
+        public void ActualizarDatos(InfoPersona info)
+        {
+            try
+            {
+                Personas datosPer = dc.Personas.Single(p => p.Id == info.Id);
+                datosPer.Codigo = info.Codigo;
+                datosPer.Nombres = info.Nombres;
+                datosPer.Apellidos = info.Apellidos;
+                datosPer.Edad = info.Edad;
+                datosPer.Telefono = info.Telefono;
+                datosPer.Email = info.Email;
+                datosPer.FechaNacimiento = info.FechaNacimiento;
+                datosPer.Genero = info.Genero;
+                datosPer.Precio = info.Precio;
+                datosPer.Estado = true;
+                datosPer.FechaRegistro = DateTime.Now;
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

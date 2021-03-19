@@ -16,10 +16,15 @@ $(document).ready(function () {
     });
 
     $(document).on('click', "span[rel='verSolicitudJP']", function () {
+        $('#myModalSolicitud').modal('show');
         var FacId = $(this).attr('data-id');
         var codigo = $(this).attr('data-codigo');
-        $('#myModalSolicitud').modal('show');
-        cargaDatosCasoJP(FacId,codigo);
+        var tiporeq = $(this).attr('data-tiporeq');  
+        if (tiporeq == 22) {        
+            cargaDatosCasoDesinstalacion(FacId, codigo);
+        } else {
+            cargaDatosCasoJP(FacId, codigo);
+        }    
     });
 });
 
@@ -61,6 +66,22 @@ function cargaDatosCasoJP(FacId,codigo) {
         async: false,
         type: "POST",
         url: "../" + "Tradicional/VerCasoJP.aspx?parametro=" + FacId,
+        contentType: "application/json; charset=utf-8",
+        dataType: "html",
+    }).done(function (data) {
+        $("#contenidoSolicitud").html(data);
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        var mensajeError = "<b>Error al obtener la información. Información del Caso.<b>";
+        errorMessage(mensajeError, jqXHR, textStatus, errorThrown);
+    });
+}
+
+function cargaDatosCasoDesinstalacion(FacId, codigo) {
+    $("#tituloModalSolicitud").text("Información del Caso " + codigo);
+    $.ajax({
+        async: false,
+        type: "POST",
+        url: "../" + "Tradicional/VerCasoDesinstalacion.aspx?parametro=" + FacId,
         contentType: "application/json; charset=utf-8",
         dataType: "html",
     }).done(function (data) {

@@ -1,174 +1,175 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Crud.aspx.cs" Inherits="Web.Crud" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Begin Page Content -->
-        <div class="container-fluid">
+    <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">CRUD CON LINQ TO SQ</h1>
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">CRUD CON LINQ TO SQ</h1>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Ingrese Sus Datos Por Favor :</h6>
-              <!--Ingreso de datos-->
-                     <div class="form-row">
-                         <div class="table">
-                             <!--label and input-->
-                             <div class="form-row">
-                                     <div class="form-group col-md-6">
-                                         <asp:Label ID="Label1" runat="server" class="col-sm-2 col-form-label" Text="Código:"></asp:Label>
-
-                                         <asp:TextBox ID="txtCodigo" runat="server" class="form-control" placeholder="Codigo" ToolTip="Solo números enteros (int primary key)" type="codigo" Width="100px"></asp:TextBox>
-                                     </div>
-                                 <div class="form-group col-md-6">
-                                         <asp:Label ID="Label2" runat="server" class="col-sm-2 col-form-label" Text="Nombres:"></asp:Label>
-                                         <asp:TextBox ID="txtNombres" runat="server" class="form-control" placeholder="Nombres" ToolTip="Ingresar Nombres (varchar)" type="nombres" ></asp:TextBox>
-
-                                     </div>
+                <h6 class="m-0 font-weight-bold text-primary">Ingrese Sus Datos Por Favor :</h6>
+                <!--Ingreso de datos-->
+                <div class="form-row">
+                    <div class="table">
+                        <!--label and input-->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <asp:Label ID="LblCodigo" runat="server" class="col-sm-2 col-form-label" Text="Código:"></asp:Label>
+                                <asp:TextBox ID="TxtCodigo" runat="server" class="form-control" placeholder="Codigo" ToolTip="Solo números enteros " type="codigo" Width="100px"></asp:TextBox>
                             </div>
-                             <div class="form-row">
-                                     
-                                    <div class="form-group col-md-6">
-                                         <asp:Label ID="Label3" runat="server" class="col-sm-2 col-form-label" Text="Apellidos:"></asp:Label>
-                                         <asp:TextBox ID="txtApellidos" runat="server" class="form-control" placeholder="Apellidos" ToolTip="Ingresar Apellidos (varchar)" type="apellido" ></asp:TextBox>
-                            
-                                    </div>
-                                 <div class="form-group col-md-6">
-                                         <asp:Label ID="Label5" runat="server" class="col-sm-2 col-form-label" Text="Teléfono:"></asp:Label>
-                                         <asp:TextBox ID="txtTelefono" runat="server" class="form-control" placeholder="Telefono" ToolTip="Ingresar teléfono (varchar)" type="telefono" ></asp:TextBox>
-                                 </div>
-                             </div>
-                             <div class="form-row">
-                                 
-                                <div class="form-group col-md-6">
-                                         <asp:Label ID="Label6" runat="server" class="col-sm-2 col-form-label" Text="Edad:"></asp:Label>
-                                         <asp:TextBox ID="txtEdad" runat="server" class="form-control" placeholder="Edad" ToolTip="Ingresar edad (int)" type="edad" ></asp:TextBox>
-                                         <br />
-                                 </div>
-                                   <div class="form-group col-md-6">
-                                         <asp:Label ID="Label9" runat="server" class="col-sm-2 col-form-label" Text="FechaNacimiento:"></asp:Label>
-                                         <asp:TextBox ID="TextBox4" runat="server" class="form-control" placeholder="FechaNacimiento" ToolTip="Ingresarsu fecha de nacimiento(varchar)" type="FechaNacimiento" ></asp:TextBox>
-                            
-                                    </div>
-  
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <asp:Label ID="LblNombres" runat="server" class="col-sm-2 col-form-label" Text="Nombres:"></asp:Label>
+                                <asp:TextBox ID="TxtNombres" runat="server" class="form-control" placeholder="Nombres" ToolTip="Ingrese Sus Nombres " ></asp:TextBox>
+
                             </div>
-                             <div class="form-row">
-                                  
-                                  
-                             </div>
-                             <div class="form-row">
-                                     <div class="form-group col-md-6">
-                                         <asp:Label ID="Label4" runat="server" class="col-sm-2 col-form-label" Text="Precio:"></asp:Label>
-                                         <asp:TextBox ID="TextBox1" runat="server" class="form-control" placeholder="Precio" ToolTip="Ingresar el precio (varchar)" type="Precio" ></asp:TextBox>
-                                     </div>
+                            <div class="form-group col-md-6">
+                                <asp:Label ID="LblApellidos" runat="server" class="col-sm-2 col-form-label" Text="Apellidos:"></asp:Label>
+                                <asp:TextBox ID="TxtApellidos" runat="server" class="form-control" placeholder="Apellidos" ToolTip="Ingrese Sus Apellidos" ></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <asp:Label ID="LblTelefono" runat="server" class="col-sm-2 col-form-label" Text="Teléfono:"></asp:Label>
+                                <asp:TextBox ID="TxtTelefono" runat="server" class="form-control" placeholder="Telefono" ToolTip="Ingresar teléfono " ></asp:TextBox>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <asp:Label ID="LblEdad" runat="server" class="col-sm-2 col-form-label" Text="Edad:"></asp:Label>
+                                <asp:TextBox ID="TxtEdad" runat="server" class="form-control" placeholder="Edad" ToolTip="Ingresar edad" ></asp:TextBox>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <asp:Label ID="LblEmail" runat="server" class="col-sm-2 col-form-label" Text="Email:"></asp:Label>
+                                <asp:TextBox ID="TxtEmail" runat="server" class="form-control" placeholder="Email" ToolTip="Ingrese su Email" ></asp:TextBox>
+                                <br />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <asp:Label ID="LblGenero" runat="server" class="col-sm-2 col-form-label" Text="Genero:"></asp:Label>
+                                <asp:TextBox ID="TxtGenero" runat="server" class="form-control" placeholder="Genero" ToolTip="Seleccione el genero" ></asp:TextBox>
+                                <br />
+                            </div>
+                        </div>
 
-                             </div>
-
-                             <!-- botones-->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <asp:Label ID="LblFechaNacimiento" runat="server" class="col-sm-2 col-form-label" Text="Fecha de Nacimiento:"></asp:Label>
+                                <asp:TextBox ID="TxtFechaNacimiento" runat="server" class="form-control" placeholder="Fecha de Nacimiento" ToolTip="Ingresarsu fecha de nacimiento" ></asp:TextBox>
+                            </div>
                             
-                            <div class="col-lg-6">
-                                
+                        </div>
+                        
+                        <!-- botones-->
+                        <div class="col-lg-6">
                             <h6 class="m-0 font-weight-bold text-primary">seleccionar la accion por favor :</h6>
-                                          <%--<asp:Button ID="btnGrabar" runat="server" CssClass=" btn btn-success" OnClick="btnGrabar_Click" Text="Grabar" />
-                                          <asp:Button ID="btnBuscar" runat="server" CssClass=" btn btn-secondary" OnClick="btnBuscar_Click" Text="Buscar" />
-                                          <asp:Button ID="btnActualizar" runat="server" CssClass="btn btn-info" OnClick="btnActualizar_Click" Text="Actualizar" />
-                                          <asp:Button ID="btnBorrar" runat="server" CssClass=" btn btn-danger" OnClick="btnBorrar_Click" Text="Borrar" />--%>
+                            <asp:Button ID="BtnGuardar" runat="server" CssClass=" btn btn-success" OnClick="BtnGuardar_Click" Text="Guardar" />
+                            <asp:Button ID="BtnBuscar" runat="server" CssClass=" btn btn-secondary" OnClick="BtnBuscar_Click" Text="Buscar" />
+                            <asp:Button ID="BtnActualizar" runat="server" CssClass="btn btn-info" OnClick="BtnActualizar_Click" Text="Actualizar" />
+                            <asp:Button ID="BtnBorrar" runat="server" CssClass=" btn btn-danger" OnClick="BtnBorrar_Click" Text="Borrar" />
+                        </div>
+
+                        <!--Mensaje de alerta-->
+                        <div class="alert alert-primary" role="alert">
+                            <asp:Label ID="lblMensaje" runat="server" Style="font-weight: 600;" class="alert alert-success" role="alert"></asp:Label>
+                        </div>
+
+                        <!--PARTE DE LA TABLES-->
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                   <%-- <div class="dataTables_length" id="example_length">
+                                        <label>
+                                            Mostrar
+                                            <select name="example_length" aria-controls="example" class="custom-select custom-select-sm form-control form-control-sm">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>
+                                            registros</label>
+                                    </div>--%>
                                 </div>
-                           
-                             <!--Mensaje de alerta-->
-                            <div class="alert alert-primary" role="alert">
-                                     <asp:Label ID="lblMensaje" runat="server" style="font-weight: 600;" class="alert alert-success" role="alert"></asp:Label>
-                            </div>
-
-                            <!--PARTE DE LA TABLES-->
-
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-6"><div class="dataTables_length" id="example_length"><label>Mostrar <select name="example_length" aria-controls="example" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> registros</label>
-                                                                    </div></div><div class="auto-style1">
-                                          <%-- <%--filtracion de datos--%>    
-                                        <div id="example_filter" class="dataTables_filter">
-                                            <label>Buscar:
-                                                <asp:TextBox ID="Textfiltro" runat="server" class="form-control" placeholder="Codigo" ></asp:TextBox></label>
-<%--                                            <asp:Button ID="btnfilter" runat="server" CssClass=" btn btn-secondary" OnClick="btnFiltrar_Click" Text="Buscar" />--%>
-                                        </div>
-
-                                        </div>
-                                    <div class="col-lg-12">
-                                        <div class="table-responsive"> 
-                                                <table id="example1" class="table table-striped table-bordered" style="width:100%">
+                                <div class="auto-style1">
+                                    <%-- <%--filtracion de datos--%>
                                     
-                                                <!--parte del gridwieb-->
-                                                     <tr>
-                                             
-                                                         <td >
-                                                             
 
-                                                             <%--<asp:ScriptManager ID="ScriptManager1" runat="server">
-                                                             </asp:ScriptManager>--%>
-                                                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                                                 <ContentTemplate>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="table-responsive">
+                                        <table id="example1" class="table table-striped table-bordered" style="width: 100%">
 
-<%--                                                             <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick1"></asp:Timer>--%>
-<%--                                                                <asp:GridView  AllowPaging="True" AutoGenerateColumns="False" DataSourceID="LinqDataSource" ID="GridDatos" PageSize="<%# PAGE_SIZE %>" runat="server" Width="100%">
-                                                                 <AlternatingRowStyle BackColor="White" />
-                                                                 <Columns>
-                                                                     <asp:BoundField DataField="Codigo" HeaderText="Codigo" ReadOnly="True" SortExpression="Codigo" />
-                                                                     <asp:BoundField DataField="nombres" HeaderText="Nombres" ReadOnly="True" SortExpression="Nombres" />
-                                                                     <asp:BoundField DataField="Apellidos" HeaderText="Apellidos" ReadOnly="True" SortExpression="Apellidos" />
-                                                                     <asp:BoundField DataField="Telefono" HeaderText="Telefono" ReadOnly="True" SortExpression="Telefono" />
-                                                                     <asp:BoundField DataField="Edad" HeaderText="Edad" ReadOnly="True" SortExpression="Edad" />
-                                                                 </Columns>
-                                                                 <FooterStyle BackColor="#4e73df" Font-Bold="True" ForeColor="White" />
-                                                                 <HeaderStyle BackColor="#4e73df" Font-Bold="True" ForeColor="White" />
-                                                                 <PagerSettings FirstPageText="Primera" LastPageText="Ultima" NextPageText="Siguiente" PreviousPageText="Anterior" Mode="NumericFirstLast" />
-                                                                 <PagerStyle BackColor="#4e73df" ForeColor="White" HorizontalAlign="Center" CssClass="pagination-mg" />
-                                                                 <RowStyle BackColor="#F3F6F7" ForeColor="#333333" />
-                                                                 <SelectedRowStyle BackColor="#9DA1A2" Font-Bold="True" ForeColor="Navy" />
-                                                                 <SortedAscendingCellStyle BackColor="#F3F6F7" />
-                                                                 <SortedAscendingHeaderStyle BackColor="#4D0000" />
-                                                                 <SortedDescendingCellStyle BackColor="#E8EBEC" />
-                                                                 <SortedDescendingHeaderStyle BackColor="#820000" />
-                                                                 
-                                                             </asp:GridView>--%>
+                                            <!--parte del gridwieb-->
+                                            <tr>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <asp:GridView ID="WdgPersonas" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" Width="100%" CssClass="table table-border table-hover table-sm miEstilo"
+                                                            AllowPaging="True" OnPageIndexChanging="WdgPersonas_PageIndexChanging" DataSourceID="LinqDataSource1">
+                                                            <PagerStyle HorizontalAlign="Center" CssClass="GridPage" />
+                                                            <PagerSettings FirstPageText="Primera Página" LastPageText="Ultima Página" Mode="NumericFirstLast" />
+                                                            <Columns>
+                                                                <asp:BoundField HeaderText="Codigo" DataField="Codigo" HeaderStyle-Width="20%" />
+                                                                <asp:BoundField HeaderText="Nombres" DataField="Nombres" HeaderStyle-Width="20%" />
+                                                                <asp:BoundField HeaderText="Apellidos" DataField="Apellidos" HeaderStyle-Width="10%" />
+                                                                <asp:BoundField HeaderText="Edad" DataField="Edad" HeaderStyle-Width="10%" />
+                                                                <asp:BoundField HeaderText="Telefono" DataField="Telefono" HeaderStyle-Width="20%" />
+                                                                <asp:BoundField HeaderText="Email" DataField="Email" HeaderStyle-Width="10%" />
+                                                                <asp:BoundField HeaderText="Fecha de Nacimiento" DataField="FechaNacimiento" HeaderStyle-Width="10%" />
+                                                                <asp:BoundField HeaderText="Genero" DataField="Genero" HeaderStyle-Width="10%" />
+                                                            </Columns>
+                                                            <EmptyDataTemplate>
+                                                                <h5 class="text-center">No existen registros</h5>
+                                                            </EmptyDataTemplate>
+                                                        </asp:GridView>
+                                                        <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="Negocios.db_personasDataContext" EntityTypeName="" Select="new (Id, Nombres, Codigo, Apellidos, Edad, Telefono, Email, FechaNacimiento, Genero, Precio, Estado, FechaRegistro)" TableName="Personas">
+                                                        </asp:LinqDataSource>
+                                                        <!--Dropdown List -->
+                                                        <div class="form-group">
+                                                            <div class="col-md-12 text-right">
+                                                                <asp:DropDownList ID="DdlList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_SelectedIndexChanged" HorizontalAlign="Center" CssClass="form-control-sm">
+                                                                    <asp:ListItem>10</asp:ListItem>
+                                                                    <asp:ListItem>25</asp:ListItem>
+                                                                    <asp:ListItem>50</asp:ListItem>
+                                                                    <asp:ListItem>100</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                            </div>
+                                                        </div>
 
-                                                             <!--PARTE DEL PAGIADOR-->
-<%--                                                                 <asp:LinqDataSource ID="LinqDataSource" runat="server"  AutoPage="False" ContextTypeName="LINQ_DDM.DataClassesDataContext" EntityTypeName="" 
-                                                                     OnSelecting="LinqDataSource_Selecting" Select="new (Codigo, Nombres, Apellidos, Telefono, Edad)" TableName="Alumnos">
-                                                                                                
-                                                                 </asp:LinqDataSource>--%>
-                                                             
-<br />
-                                                                 </ContentTemplate>
-                                                             </asp:UpdatePanel>
+                                                    </div>
 
-                                                             <br />
-                                                            
-                                                         </td>
-                                                     </tr>                          
-                                               </table>
-                                        </div>
-                                     </div>
+                                                    <br />
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
 
-                             <!--Ejemplo tabla con DataTables para implementar-->
-                     </div>
-                     </div>
-                     
+                        <!--Ejemplo tabla con DataTables para implementar-->
+                    </div>
+                </div>
+
             </div>
-          </div>
-        
-
         </div>
 
-        <!-- End of Topbar -->
 
-       
-        <!-- /.container-fluid -->
+    </div>
 
-      <!-- End of Main Content -->
+    <!-- End of Topbar -->
 
-      
+
+    <!-- /.container-fluid -->
+
+    <!-- End of Main Content -->
+
+
 
 </asp:Content>

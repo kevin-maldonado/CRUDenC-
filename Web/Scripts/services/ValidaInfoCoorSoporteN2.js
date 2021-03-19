@@ -41,6 +41,5 @@
 
 function VerPermisos(IdPermiso) {
     $('#myModalData').modal('show');
-    console.log('IdPermiso', IdPermiso);
     cargaPermiso(IdPermiso);
 }
