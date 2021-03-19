@@ -17,9 +17,15 @@
         cargarDevoluciones(FacId);
     });
 
-    $('#BtnGuardar').on('click', function (e) {
-        var FacId = $('#HdFacId').val();   
-        var res = actualizarFechaCompromiso(FacId);
+    $('#BtnVerCierreProyecto').on('click', function (e) {
+        var FacId = $('#HdFacId').val();
+        $('#myModalData').modal('show');
+        cargarCancelaciones(FacId);
+    });
+
+    /////GUARDAR FECHA COMPROMISO///////////
+    $('#BtnGuardarFechaComp').on('click', function (e) {
+        var res = actualizarFechaCompromiso($('#HdFacId').val(), $('#TxtFechaComp').val());
         var respuesta = res[0];
         if (respuesta == '1') {
             bootbox.alert({
@@ -116,20 +122,19 @@ function cargarHisPermisos(DetaPerId) {
     });
 }
 
-function actualizarFechaCompromiso(FacId) {
-    var fecha = $('#TxtFechaComp').val();
+function cargarCancelaciones(DetaPerId) {
+    var codigo = $('#HdCodigoCaso').val();
+    $("#tituloModalData").text("Cerrar Proyecto " + codigo);
     $.ajax({
         async: false,
         type: "POST",
-        url: URL_WS + "ActualizarFechaCompromiso",
+        url: "../" + "Tradicional/VerCancelacion.aspx?parametro=" + DetaPerId,
         contentType: "application/json; charset=utf-8",
-        dataType: 'json',
-        data: "{'idFact': '" + FacId + "','fecha': '" + fecha + "'}",
+        dataType: "html",
     }).done(function (data) {
-        respuesta = JSON.parse(data.d);
+        $("#contenidoData").html(data);
     }).fail(function (jqXHR, textStatus, errorThrown) {
-        var mensajeError = "<b>Tiempo de sesion expirado.<b> <br> No se pudo conectar con la API, Fecha Compromiso";
+        var mensajeError = "<b>Error al obtener la información. Cancelación de proyecto.<b>";
         errorMessage(mensajeError, jqXHR, textStatus, errorThrown);
     });
-    return respuesta;
 }

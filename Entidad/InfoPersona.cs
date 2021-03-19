@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    public class Persona
+    public class InfoPersona
     {
         public int Id { get; set; }
         public int Codigo { get; set; }
@@ -15,10 +15,11 @@ namespace Entidad
         public int Edad { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-        public DateTime FechaNacimineto { get; set; }
+        public DateTime FechaNacimiento { get; set; }
         public char Genero { get; set; }
         public decimal Precio { get; set; }
-        public bool Estado { get; set; }
+        public bool Estado { get; set;}
         public DateTime FechaRegistro { get; set; }
+        public string mensaje { get; set;}
     }
 }
